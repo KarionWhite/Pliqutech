@@ -1,0 +1,18 @@
+// .vscode/launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Go API (Debug Dev)",
+            "type": "go",
+            "request": "launch",
+            "mode": "exec",
+            "program": "${workspaceFolder}/debug-server",
+            "envFile": "${workspaceFolder}/.env.dev",
+            "env": {},
+            "args": [],
+            "showLog": true,
+            "preLaunchTask": "Build Go Backend for Debug" // Dieser Task startet nur den Build, nicht das Stoppen des Dienstes
+        }
+    ]
+}
