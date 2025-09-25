@@ -1,0 +1,86 @@
+.banner-header {
+  display: flex;
+  justify-content: space-between; /* Verteilt Logo und Rest an die Enden */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #2c3e50; /* Beispiel Dunkelblau/-grau */
+  color: white;
+}
+
+.logo { /* Dein Logo-Styling hier, falls du die Klasse verwendest */
+  height: 40px; /* Beispiel */
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* Standardmäßig versteckt, wird per Media Query gezeigt */
+}
+
+.main-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Für Desktop-Ansicht nebeneinander */
+}
+
+.main-menu li {
+  margin-left: 20px;
+}
+
+.main-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-menu.is-open {
+  /* Styling für das geöffnete Dropdown auf kleinen Screens */
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* Höhe des Headers anpassen */
+  right: 20px;
+  background-color: #34495e; /* Etwas helleres Grau/Blau */
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.auth-section button {
+  margin-left: 20px;
+  padding: 8px 15px;
+  background-color: #1abc9c; /* Beispiel Türkis */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Media Query für kleinere Bildschirme */
+@media (max-width: 768px) { /* Beispielhafter Breakpoint */
+  .main-menu {
+    display: none; /* Menü verstecken */
+  }
+
+  .main-menu.is-open { /* Sicherstellen, dass es angezeigt wird, wenn is-open true ist */
+     display: flex;
+  }
+
+  .menu-toggle-button {
+    display: block; /* Hamburger-Icon anzeigen */
+  }
+
+  /* Optional: Login/Logout Button anders positionieren oder ins Menü integrieren */
+  .auth-section {
+    margin-left: auto; /* Verschiebt es nach rechts, wenn kein Menü da ist */
+    padding-left:10px;
+  }
+}
